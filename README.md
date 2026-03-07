@@ -1,4 +1,4 @@
-# 🧩 Rubik's Cube Developer Portfolio of Brahmpreet Singh
+# 🧩 Rubik's Cube Developer Portfolio
 
 A modern interactive developer portfolio inspired by the logic and elegance of a Rubik's Cube.
 
