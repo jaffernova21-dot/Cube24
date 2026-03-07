@@ -45,6 +45,21 @@
         body:has(a:hover) #cur, body:has(button:hover) #cur {
             width: 52px; height: 52px; border-color: var(--orange);
         }
+        a,
+        button,
+        [onclick],
+        [role="button"] {
+            cursor: none;
+        }
+
+        /* keep grab cursor for draggable cube */
+        #cubeWrapper {
+            cursor: grab;
+        }
+
+        #cubeWrapper:active {
+            cursor: grabbing;
+        }
 
         /* ── SCROLL PROGRESS ── */
         #progress {
@@ -435,10 +450,10 @@
             <p class="about-accent">"Any sufficiently complex problem, broken down step by step, becomes beautifully simple."</p>
         </div>
         <div class="stats">
-            <div class="stat up"><div class="stat-n">4+</div><div class="stat-l">Core Technologies</div></div>
-            <div class="stat up"><div class="stat-n">20+</div><div class="stat-l">Projects Shipped</div></div>
-            <div class="stat up"><div class="stat-n">2+</div><div class="stat-l">Years Experience</div></div>
-            <div class="stat up"><div class="stat-n">&infin;</div><div class="stat-l">Cubes Solved</div></div>
+            <div class="stat up"><div class="stat-n">10+</div><div class="stat-l">Core Technologies</div></div>
+            <div class="stat up"><div class="stat-n">15+</div><div class="stat-l">Projects</div></div>
+            <div class="stat up"><div class="stat-n">3+</div><div class="stat-l">Years Experience</div></div>
+            <div class="stat up"><div class="stat-n">24.473</div><div class="stat-l">Best Solve Time (seconds)</div></div>
         </div>
     </div>
 </section>
