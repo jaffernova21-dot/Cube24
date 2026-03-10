@@ -5,19 +5,32 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brahmpreet Singh</title>
-     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Brahmpreet Singh — Portfolio">
-    <meta name="twitter:description" content="Full Stack Developer | AI/ML Enthusiast | Building elegant solutions to complex problems.">
-    <meta name="twitter:image" content="https://brahmpreet.vercel.app/twitter-card.png">
+    <title>Brahmpreet Singh | Web Developer & Creative Problem Solver</title>
+    <meta name="description"
+        content="Portfolio of Brahmpreet Singh, a passionate web developer specializing in clean, fast, and beautiful web experiences.">
 
-    <!-- Open Graph (for LinkedIn, Discord, WhatsApp etc.) -->
-    <meta property="og:title" content="Brahmpreet Singh — Portfolio">
-    <meta property="og:description" content="Full Stack Developer | AI/ML Enthusiast | Building elegant solutions to complex problems.">
-    <meta property="og:image" content="https://brahmpreet.vercel.app/twitter-card.png">
-    <meta property="og:url" content="https://brahmpreet.vercel.app">
+    <!-- OpenGraph Meta Tags -->
+    <meta property="og:title" content="Brahmpreet Singh | Portfolio">
+    <meta property="og:description"
+        content="Explore my projects and skills in web development, specializing in elegant solutions to complex problems.">
+    <meta property="og:image" content="preview.png">
+    <meta property="og:url" content="https://brahmpreett.github.io/">
     <meta property="og:type" content="website">
+
+    <!-- Structured Metadata (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Brahmpreet Singh",
+      "jobTitle": "Web Developer",
+      "url": "https://brahmpreett.github.io/",
+      "sameAs": [
+        "https://github.com/Brahmpreett",
+        "https://www.linkedin.com/in/brahmpreet-singh-5b2a5029a/"
+      ]
+    }
+    </script>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
@@ -198,9 +211,17 @@
             transition: transform .3s, opacity .3s;
         }
 
-        .nav-toggle.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-        .nav-toggle.active span:nth-child(2) { opacity: 0; }
-        .nav-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+        .nav-toggle.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
 
         .nav-links {
             display: flex;
@@ -690,53 +711,94 @@
             background: var(--bg2);
         }
 
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 70px;
-            align-items: center;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .about-text p {
-            color: var(--dim);
-            line-height: 1.85;
-            font-size: 1.03rem;
-            margin-bottom: 22px;
-        }
-
-        .about-text p:last-child {
-            margin-bottom: 0;
-        }
-
         .about-accent {
             color: var(--yellow) !important;
-            font-style: italic;
+            font-style: italic !important;
+            margin-top: 25px;
+            font-weight: 500;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            grid-template-areas: "bio right-col";
+            gap: 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .about-bio {
+            grid-area: bio;
+        }
+
+        .about-right-col {
+            grid-area: right-col;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .about-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid rgba(255, 213, 0, 0.3);
+            box-shadow: 0 0 40px rgba(255, 213, 0, 0.2);
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: var(--bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-photo:hover {
+            transform: scale(1.05) rotate(3deg);
+            border-color: var(--yellow);
+            box-shadow: 0 0 60px rgba(255, 213, 0, 0.3);
+        }
+
+        .about-stats-container {
+            width: 180px;
         }
 
         .stats {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
+            gap: 12px;
+            width: 100%;
         }
 
         .stat {
             background: rgba(255, 255, 255, .03);
-            border: 1px solid rgba(255, 255, 255, .07);
-            border-radius: 18px;
-            padding: 28px 20px;
+            border: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 15px 5px;
             text-align: center;
-            transition: border-color .3s, transform .3s;
+            transition: transform .3s, box-shadow .3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-width: 0;
         }
 
         .stat:hover {
-            border-color: var(--yellow);
             transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 213, 0, 0.1);
         }
 
         .stat-n {
-            font-size: 2.7rem;
+            font-size: 1.5rem;
             font-weight: 700;
             background: linear-gradient(135deg, var(--orange), var(--yellow));
             -webkit-background-clip: text;
@@ -745,10 +807,15 @@
         }
 
         .stat-l {
-            font-size: .88rem;
+            font-size: 0.65rem;
             color: var(--dim);
             margin-top: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
+
+
+
 
         /* ── SKILLS ── */
         #skills {
@@ -765,11 +832,12 @@
 
         .skill-card {
             background: rgba(255, 255, 255, .02);
-            border: 1px solid rgba(255, 255, 255, .07);
+            border: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             border-radius: 22px;
             padding: 36px 22px;
             text-align: center;
-            transition: transform .35s, border-color .35s, box-shadow .35s;
+            transition: transform .35s, box-shadow .35s;
             overflow: hidden;
             position: relative;
         }
@@ -785,8 +853,7 @@
 
         .skill-card:hover {
             transform: translateY(-10px);
-            border-color: var(--bc, rgba(255, 255, 255, .2));
-            box-shadow: var(--sh, none);
+            box-shadow: var(--sh, 0 20px 50px rgba(0, 0, 0, 0.4));
         }
 
         .skill-card:hover::before {
@@ -966,7 +1033,8 @@
             -webkit-backface-visibility: hidden;
             border-radius: 20px;
             padding: 28px;
-            border: 1px solid rgba(255, 255, 255, .07);
+            border: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .proj-f {
@@ -1149,9 +1217,55 @@
             z-index: 1;
         }
 
+        .desktop-only-flex {
+            display: flex;
+        }
+
+        .desktop-only {
+            display: block;
+        }
+
+        .mobile-only {
+            display: none;
+        }
+
         footer strong {
             color: var(--yellow);
         }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+
+        .social-icon {
+            color: var(--dim);
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .social-icon:hover {
+            color: var(--yellow);
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px rgba(255, 213, 0, 0.4);
+            background: rgba(255, 213, 0, 0.05);
+        }
+
+        /* Magnetic Button Helper */
+        .btn-m {
+            transition: transform 0.1s ease-out;
+        }
+
 
         /* ── SCROLL ANIMS ── */
         .up {
@@ -1201,30 +1315,102 @@
             }
         }
 
-        @media(max-width:860px) {
-            nav {
-                padding: 16px 24px
+        @media (max-width: 1024px) {
+
+            .desktop-only-flex,
+            .desktop-only {
+                display: none !important;
+            }
+
+            #hero {
+                display: flex !important;
+                flex-direction: column !important;
+                text-align: center !important;
+                padding: 100px 20px 60px !important;
+                gap: 40px !important;
+                justify-content: flex-start !important;
+                height: auto !important;
+                min-height: 100vh !important;
+                width: 100vw !important;
+                overflow-x: hidden !important;
+            }
+
+            .hero-content {
+                max-width: 100% !important;
+                order: 1 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+
+            .hero-content .hero-desc {
+                max-width: 540px !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            .cube-wrapper {
+                order: 2 !important;
+                transform: scale(0.85) !important;
+                margin: 0 auto !important;
+                width: 100% !important;
+            }
+
+            .hero-btns {
+                justify-content: center !important;
+                width: 100% !important;
+            }
+
+            .mobile-only {
+                display: block !important;
+            }
+
+            .mobile-only-flex {
+                display: flex !important;
             }
 
             section {
                 padding: 80px 24px
             }
 
-            #hero {
+
+
+            #about {
+                display: flex;
                 flex-direction: column;
-                padding: 130px 24px 70px;
-                gap: 50px;
-                text-align: center
+                gap: 30px;
+                text-align: center;
+                align-items: center;
             }
 
-            .hero-btns {
-                justify-content: center
+            .sec-head {
+                order: 1;
+                margin-bottom: 25px;
             }
 
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 40px
+            .about-photo {
+                order: 2;
+                width: 140px;
+                height: 140px;
+                margin: 0 auto;
             }
+
+            .about-stats-wrapper {
+                order: 3;
+                width: 100%;
+                max-width: 320px;
+                margin: 0 auto;
+            }
+
+            .about-bio {
+                order: 4;
+                width: 100%;
+            }
+
+            .about-container {
+                display: contents;
+            }
+
 
             .skills-grid {
                 grid-template-columns: repeat(2, 1fr)
@@ -1328,8 +1514,8 @@
                 you just need the right moves. I build clean, fast, and beautiful web experiences.
             </p>
             <div class="hero-btns">
-                <a href="#projects" class="btn-p">View Projects &rarr;</a>
-                <a href="#contact" class="btn-s">Get In Touch</a>
+                <a href="#projects" class="btn-p btn-m">View Projects &rarr;</a>
+                <a href="#contact" class="btn-s btn-m">Get In Touch</a>
             </div>
         </div>
 
@@ -1342,8 +1528,8 @@
             <div class="cube-ui">
                 <div class="cube-status" id="cubeStatus">Initializing...</div>
                 <div class="cube-btns">
-                    <button class="cbtn" id="btnScramble">Scramble</button>
-                    <button class="cbtn cbtn-solve" id="btnSolve">Solve</button>
+                    <button class="cbtn btn-m" id="btnScramble">Scramble</button>
+                    <button class="cbtn cbtn-solve btn-m" id="btnSolve">Solve</button>
                 </div>
                 <div class="cube-hint">Drag to rotate &bull; buttons to scramble/solve</div>
             </div>
@@ -1362,36 +1548,76 @@
 
     <!-- ════════ ABOUT ════════ -->
     <section id="about">
-        <div class="sec-head">
-            <div class="sec-tag">01 &mdash; About</div>
+        <div class="sec-head up">
             <h2 class="sec-title">The <span>Developer</span> Behind The Cube</h2>
         </div>
-        <div class="about-grid">
-            <div class="about-text up">
-                <p>Just like a Rubik's Cube, complex problems have elegant solutions &mdash; you just need the right
-                    algorithm. I'm a passionate developer who turns intricate challenges into clean, functional code.
-                </p>
-                <p>With expertise in front-end development, scripting, and automation, I bring ideas to life across the
-                    full stack. Each project is a new puzzle, and I approach every one with curiosity and precision.</p>
-                <p class="about-accent">"Any sufficiently complex problem, broken down step by step, becomes beautifully
-                    simple."</p>
+
+        <div class="about-container">
+            <div class="about-photo mobile-only up">
+                <img src="preview.png" alt="Brahmpreet Singh" loading="lazy">
             </div>
-            <div class="stats">
-                <div class="stat up">
-                    <div class="stat-n">10+</div>
-                    <div class="stat-l">Core Technologies</div>
+
+            <div class="about-stats-wrapper mobile-only up">
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-n" data-target="10">0</div>
+                        <div class="stat-l">Core Techs</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-n" data-target="15">0</div>
+                        <div class="stat-l">Projects</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-n" data-target="3">0</div>
+                        <div class="stat-l">Years Exp.</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-n" data-target="24.5" data-decimals="1">0</div>
+                        <div class="stat-l">Best Time</div>
+                    </div>
                 </div>
-                <div class="stat up">
-                    <div class="stat-n">15+</div>
-                    <div class="stat-l">Projects</div>
+            </div>
+
+            <div class="about-bio up">
+                <div class="about-text">
+                    <p>Just like a Rubik's Cube, complex problems have elegant solutions &mdash; you just need the right
+                        algorithm. I'm a passionate developer who turns intricate challenges into clean, functional
+                        code.
+                    </p>
+                    <p>With expertise in front-end development, scripting, and automation, I bring ideas to life across
+                        the
+                        full stack. Each project is a new puzzle, and I approach every one with curiosity and precision.
+                    </p>
+                    <p class="about-accent">"Any sufficiently complex problem, broken down step by step, becomes
+                        beautifully
+                        simple."</p>
                 </div>
-                <div class="stat up">
-                    <div class="stat-n">3+</div>
-                    <div class="stat-l">Years Experience</div>
+            </div>
+
+            <!-- Right Side: Photo + Stats (Desktop) -->
+            <div class="about-right-col desktop-only-flex up">
+                <div class="about-photo">
+                    <img src="preview.png" alt="Brahmpreet Singh" loading="lazy">
                 </div>
-                <div class="stat up">
-                    <div class="stat-n">24.5</div>
-                    <div class="stat-l">Best Solve Time (seconds)</div>
+                <div class="about-stats-wrapper">
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-n" data-target="10">0</div>
+                            <div class="stat-l">Core Techs</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-n" data-target="15">0</div>
+                            <div class="stat-l">Projects</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-n" data-target="3">0</div>
+                            <div class="stat-l">Years Exp.</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-n" data-target="24.5" data-decimals="1">0</div>
+                            <div class="stat-l">Best Time</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1503,12 +1729,17 @@
                 <div class="proj-inner">
                     <div class="proj-f">
                         <div class="proj-num">01 / 03</div>
-                        <div class="proj-ico" style="background-image: url('/C:/Users/Asus/.gemini/antigravity/brain/27dfebe1-757e-4d73-b059-d88e2f203946/potli_budget_app_1772912367902.png'); background-size: cover; border-radius: 12px; height: 120px; width: 100%; margin-bottom: 12px;"></div>
+                        <div class="proj-ico"
+                            style="background-image: url('/C:/Users/Asus/.gemini/antigravity/brain/27dfebe1-757e-4d73-b059-d88e2f203946/potli_budget_app_1772912367902.png'); background-size: cover; border-radius: 12px; height: 120px; width: 100%; margin-bottom: 12px;">
+                        </div>
                         <div class="proj-title">Potli</div>
-                        <div class="proj-tags"><span class="ptag" style="color:var(--yellow);border-color:var(--yellow)">Vercel</span><span class="ptag" style="color:var(--orange);border-color:var(--orange)">Budgeting</span></div>
+                        <div class="proj-tags"><span class="ptag"
+                                style="color:var(--yellow);border-color:var(--yellow)">Vercel</span><span class="ptag"
+                                style="color:var(--orange);border-color:var(--orange)">Budgeting</span></div>
                     </div>
                     <div class="proj-bk">
-                        <div class="proj-desc">Budget management website based on the Potli system. Tracking finances with Indian context.</div>
+                        <div class="proj-desc">Budget management website based on the Potli system. Tracking finances
+                            with Indian context.</div>
                         <a href="https://potlis.vercel.app" class="proj-link" target="_blank">View Live &rarr;</a>
                     </div>
                 </div>
@@ -1517,12 +1748,17 @@
                 <div class="proj-inner">
                     <div class="proj-f">
                         <div class="proj-num">02 / 03</div>
-                        <div class="proj-ico" style="background-image: url('/C:/Users/Asus/.gemini/antigravity/brain/27dfebe1-757e-4d73-b059-d88e2f203946/shopsyra_ai_shopping_1772912386811.png'); background-size: cover; border-radius: 12px; height: 120px; width: 100%; margin-bottom: 12px;"></div>
+                        <div class="proj-ico"
+                            style="background-image: url('/C:/Users/Asus/.gemini/antigravity/brain/27dfebe1-757e-4d73-b059-d88e2f203946/shopsyra_ai_shopping_1772912386811.png'); background-size: cover; border-radius: 12px; height: 120px; width: 100%; margin-bottom: 12px;">
+                        </div>
                         <div class="proj-title">Shopsyra</div>
-                        <div class="proj-tags"><span class="ptag" style="color:var(--blue);border-color:var(--blue)">AI</span><span class="ptag" style="color:var(--green);border-color:var(--green)">Shopping</span></div>
+                        <div class="proj-tags"><span class="ptag"
+                                style="color:var(--blue);border-color:var(--blue)">AI</span><span class="ptag"
+                                style="color:var(--green);border-color:var(--green)">Shopping</span></div>
                     </div>
                     <div class="proj-bk">
-                        <div class="proj-desc">AI-powered chatbot for in-store product discovery and recommendations.</div>
+                        <div class="proj-desc">AI-powered chatbot for in-store product discovery and recommendations.
+                        </div>
                         <a href="https://shopsyra.vercel.app" class="proj-link" target="_blank">View Live &rarr;</a>
                     </div>
                 </div>
@@ -1531,13 +1767,19 @@
                 <div class="proj-inner">
                     <div class="proj-f">
                         <div class="proj-num">03 / 03</div>
-                        <div class="proj-ico" style="background-image: url('/C:/Users/Asus/.gemini/antigravity/brain/27dfebe1-757e-4d73-b059-d88e2f203946/sorting_visualizer_tool_1772912403281.png'); background-size: cover; border-radius: 12px; height: 120px; width: 100%; margin-bottom: 12px;"></div>
+                        <div class="proj-ico"
+                            style="background-image: url('/C:/Users/Asus/.gemini/antigravity/brain/27dfebe1-757e-4d73-b059-d88e2f203946/sorting_visualizer_tool_1772912403281.png'); background-size: cover; border-radius: 12px; height: 120px; width: 100%; margin-bottom: 12px;">
+                        </div>
                         <div class="proj-title">Sorting Visualizer</div>
-                        <div class="proj-tags"><span class="ptag" style="color:var(--red);border-color:var(--red)">Algorithms</span><span class="ptag" style="color:var(--yellow);border-color:var(--yellow)">Front-End</span></div>
+                        <div class="proj-tags"><span class="ptag"
+                                style="color:var(--red);border-color:var(--red)">Algorithms</span><span class="ptag"
+                                style="color:var(--yellow);border-color:var(--yellow)">Front-End</span></div>
                     </div>
                     <div class="proj-bk">
-                        <div class="proj-desc">Real-time algorithm metrics: comparisons, swaps, and execution time.</div>
-                        <a href="https://brahmpreett.github.io/Sorting_Visualizer/" class="proj-link" target="_blank">View Demo &rarr;</a>
+                        <div class="proj-desc">Real-time algorithm metrics: comparisons, swaps, and execution time.
+                        </div>
+                        <a href="https://brahmpreett.github.io/Sorting_Visualizer/" class="proj-link"
+                            target="_blank">View Demo &rarr;</a>
                     </div>
                 </div>
             </div>
@@ -1565,16 +1807,37 @@
             <div class="f-grp"><label>Subject</label><input type="text" placeholder="What's this about?"></div>
             <div class="f-grp"><label>Message</label><textarea placeholder="Tell me about your project..."></textarea>
             </div>
-            <button class="f-btn">Send Message &#9992;</button>
+            <button class="f-btn btn-m">Send Message &#9992;</button>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <div class="pips" style="background:transparent;padding:0 0 20px">
-            <div class="pip" style="width:10px;height:10px"></div>
-            <div class="pip" style="width:10px;height:10px"></div>
-            <div class="pip" style="width:10px;height:10px"></div>
+        <div class="social-links">
+            <a href="https://github.com/Brahmpreett" class="social-icon" target="_blank" aria-label="GitHub">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/brahmpreet-singh-5b2a5029a/" class="social-icon" target="_blank"
+                aria-label="LinkedIn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+            </a>
+            <a href="mailto:brahmpreetsarna@gmail.com" class="social-icon" aria-label="Email">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+            </a>
         </div>
         <p>Crafted with passion by <strong>Brahmpreet Singh</strong> &mdash; Solving one cube at a time.</p>
         <p style="margin-top:8px;font-size:.8rem">&copy; 2025 All Rights Reserved</p>
@@ -1644,7 +1907,7 @@
                 this.vy = -(Math.random() * .45 + .1);
                 this.rot = Math.random() * Math.PI * 2;
                 this.spin = (Math.random() - .5) * .045;
-                this.a = Math.random() * .22 + .04;
+                this.a = Math.random() * .12 + .02; // Reduced opacity for atmospheric feel
             }
             tick() {
                 this.x += this.vx; this.y += this.vy; this.rot += this.spin;
@@ -1994,11 +2257,64 @@
             entries.forEach(e => {
                 if (!e.isIntersecting) return;
                 e.target.classList.add('vis');
+
+                // Count up animation for stats
+                if (e.target.classList.contains('stat')) {
+                    const numEl = e.target.querySelector('.stat-n');
+                    if (numEl) {
+                        const target = parseFloat(numEl.dataset.target);
+                        const decimals = parseInt(numEl.dataset.decimals) || 0;
+                        let current = 0;
+                        const duration = 2000;
+                        const start = performance.now();
+
+                        function update(now) {
+                            const elapsed = now - start;
+                            const progress = Math.min(elapsed / duration, 1);
+                            // Ease out expo
+                            const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+                            current = ease * target;
+                            numEl.textContent = current.toFixed(decimals) + (decimals === 0 ? '+' : '');
+                            if (progress < 1) requestAnimationFrame(update);
+                        }
+                        requestAnimationFrame(update);
+                    }
+                }
+
                 const bar = e.target.querySelector('.bar');
                 if (bar) setTimeout(() => { bar.style.width = bar.dataset.w + '%'; }, 350);
             });
         }, { threshold: .18 });
-        document.querySelectorAll('.up').forEach(el => io.observe(el));
+        document.querySelectorAll('.up, .stat').forEach(el => io.observe(el));
+
+        // ══════════════════════════════════════════════════
+        //  MAGNETIC BUTTONS
+        // ══════════════════════════════════════════════════
+        document.addEventListener('mousemove', e => {
+            const btns = document.querySelectorAll('.btn-m');
+            btns.forEach(btn => {
+                const rect = btn.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+
+                const relX = e.clientX - centerX;
+                const relY = e.clientY - centerY;
+
+                // Closest point calculation for rectangular boundaries
+                const closestX = Math.max(rect.left, Math.min(e.clientX, rect.right));
+                const closestY = Math.max(rect.top, Math.min(e.clientY, rect.bottom));
+                const dx = e.clientX - closestX;
+                const dy = e.clientY - closestY;
+                const distToBoundary = Math.sqrt(dx * dx + dy * dy);
+
+                if (distToBoundary < 100) {
+                    const factor = 0.15;
+                    btn.style.transform = `translate(${relX * factor}px, ${relY * factor}px)`;
+                } else {
+                    btn.style.transform = `translate(0, 0)`;
+                }
+            });
+        });
 
         const barIO = new IntersectionObserver(entries => {
             entries.forEach(e => {
